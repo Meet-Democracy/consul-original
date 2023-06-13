@@ -59,14 +59,16 @@ describe Budgets::BudgetComponent do
 
       expect(page).to have_css ".budget-header"
       expect(page).not_to have_css ".with-background-image"
-      expect(page).not_to have_css ".budget-header[style*='background-image:'][style*='url(\\''][style*='clippy(1).jpg']"
+      expect(page).not_to have_css ".budget-header[style*='background-image:']"\
+                                   "[style*='url(\\''][style*='clippy(1).jpg']"
 
       budget.update!(image: create(:image, attachment: fixture_file_upload("clippy(1).jpg")))
       render_inline Budgets::BudgetComponent.new(budget)
 
       expect(page).to have_css ".budget-header"
       expect(page).to have_css ".with-background-image"
-      expect(page).to have_css ".budget-header[style*='background-image:'][style*='url(\\''][style*='clippy(1).jpg']"
+      expect(page).to have_css ".budget-header[style*='background-image:']"\
+                               "[style*='url(\\''][style*='clippy(1).jpg']"
     end
   end
 end
