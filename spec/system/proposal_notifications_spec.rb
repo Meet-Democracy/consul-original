@@ -426,4 +426,3 @@ describe "Proposal Notifications" do
     end
   end
 end
-

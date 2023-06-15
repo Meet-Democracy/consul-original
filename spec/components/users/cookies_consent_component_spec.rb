@@ -55,14 +55,14 @@ describe Users::CookiesConsentComponent do
         render_inline component
 
         expect(page).to have_css ".cookies-eu"
-       end
+      end
     end
 
     context "when cookies consent is accepted" do
       it "doesnt show cookies consent form" do
         request.cookies[:cookie_eu_consented] = "true"
         user = create(:user)
-        
+
         sign_in(user)
         logout
 
