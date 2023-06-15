@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Users::CookiesConsentComponent do
-
   describe "After User Login" do
     let(:user) { create(:user) }
     let(:component) { Users::CookiesConsentComponent.new }
@@ -21,7 +20,7 @@ describe Users::CookiesConsentComponent do
         render_inline component
 
         expect(page).to have_css ".cookies-eu"
-       end
+      end
     end
 
     context "when cookies consent is accepted" do

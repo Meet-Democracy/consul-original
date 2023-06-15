@@ -125,7 +125,6 @@ module Abilities
       can :disable_recommendations, [Debate, Proposal]
 
       can :cookies_consent, User, id: user.id
-
     end
   end
 end

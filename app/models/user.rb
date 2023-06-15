@@ -417,7 +417,7 @@ class User < ApplicationRecord
   end
 
   def cookies_consent?
-    self.cookies_consent
+    cookies_consent
   end
 
   private

@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
 
   def cookies_consent
-      current_user.update!(cookies_consent: true) if current_user
-      head :no_content
+    current_user&.update!(cookies_consent: true)
+    head :no_content
   end
 
   private
