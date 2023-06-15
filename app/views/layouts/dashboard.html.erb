@@ -14,6 +14,7 @@
   </head>
   <body class="proposal-dashboard">
     <%= raw setting["per_page_code_body"] %>
+    <%= render Users::CookiesConsentComponent.new %>
 
     <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
 

@@ -8,6 +8,7 @@
 
   <body class="auth-page">
     <%= raw setting["html.per_page_code_body"] %>
+    <%= render Users::CookiesConsentComponent.new %>
     <div class="wrapper">
       <div class="auth-image small-12 medium-3 column"
            style="background-image: url(<%= asset_url(image_path_for("auth_bg.jpg")) %>)">
