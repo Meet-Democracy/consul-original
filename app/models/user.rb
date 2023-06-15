@@ -416,6 +416,10 @@ class User < ApplicationRecord
     update!(subscriptions_token: SecureRandom.base58(32)) if subscriptions_token.blank?
   end
 
+  def cookies_consent?
+    cookies_consent
+  end
+
   private
 
     def clean_document_number

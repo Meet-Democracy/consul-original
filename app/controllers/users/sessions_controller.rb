@@ -10,6 +10,7 @@ class Users::SessionsController < Devise::SessionsController
       if !verifying_via_email? && resource.show_welcome_screen?
         welcome_path
       else
+        update_cookies_consent
         super
       end
     end
@@ -23,5 +24,11 @@ class Users::SessionsController < Devise::SessionsController
 
       stored_path = session[stored_location_key_for(resource)] || ""
       stored_path[0..5] == "/email"
+    end
+
+    def update_cookies_consent
+      if cookies[:cookie_eu_consented] == "true"
+        user.update!(cookies_consent: true)
+      end
     end
 end
