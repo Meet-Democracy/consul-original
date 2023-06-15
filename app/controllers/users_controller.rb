@@ -6,6 +6,11 @@ class UsersController < ApplicationController
     raise CanCan::AccessDenied if params[:filter] == "follows" && !valid_interests_access?(@user)
   end
 
+  def cookies_consent
+      current_user.update!(cookies_consent: true) if current_user
+      head :no_content
+  end
+
   private
 
     def valid_interests_access?(user)

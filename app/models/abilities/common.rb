@@ -123,6 +123,9 @@ module Abilities
       can [:update, :destroy], Topic, author_id: user.id
 
       can :disable_recommendations, [Debate, Proposal]
+
+      can :cookies_consent, User, id: user.id
+
     end
   end
 end
