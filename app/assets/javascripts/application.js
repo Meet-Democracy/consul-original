@@ -111,6 +111,8 @@
 //= require budget_edit_associations
 //= require budget_hide_money
 //= require datepicker
+//= require cookies_eu
+//= require cookies_consent
 //= require_tree ./admin
 //= require_tree ./sdg
 //= require_tree ./sdg_management
@@ -174,6 +176,7 @@ var initialize_modules = function() {
   App.Datepicker.initialize();
   App.SDGRelatedListSelector.initialize();
   App.SDGManagementRelationSearch.initialize();
+  App.CookiesConsent.initialize();
 };
 
 var destroy_non_idempotent_modules = function() {
