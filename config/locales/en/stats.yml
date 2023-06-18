@@ -1,42 +1,43 @@
+---
 en:
   stats:
-    title: "Participation data"
-    advanced: "Advanced statistics"
-    total_participants: "Participants"
-    by_gender: "Participants by gender"
-    by_age: "Participants by age"
-    by_geozone: "Participants by district"
-    men_percentage: "%{percentage} Men"
-    women_percentage: "%{percentage} Women"
-    age: "Age"
+    advanced: Advanced statistics
+    age: Age
     age_more_than: "%{start} years old and older"
     age_range: "%{start} - %{finish} years old"
-    total: "Total"
-    geozone: "District"
+    budgets:
+      by_heading: Participants by phase and heading
+      by_phase: Participants by phase
+      heading: Heading
+      heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
+      investments_sent: Investment proposals sent
+      link: Stats
+      page_title: "%{budget} - Participation stats"
+      participants_every_phase: Total participants
+      participants_support_phase: Participants support phase
+      participants_vote_phase: Participants voting phase
+      participatory_disclaimer: "** The numbers of total participants refer to persons that created, supported or voted investment proposals."
+      percent_heading_census: "% Heading census"
+      percent_total_participants: "% Total participants"
+      total: Total
+      total_investments: Total investment projects
+      total_selected_investments: Projects in final voting phase
+      total_unfeasible_investments: Unfeasible projects
+    by_age: Participants by age
+    by_gender: Participants by gender
+    by_geozone: Participants by district
+    geozone: District
+    men_percentage: "%{percentage} Men"
     no_demographic_data:
       one: "* There is no demographic data for 1 participant."
       other: "* There is no demographic data for %{count} participants."
-    budgets:
-      link: "Stats"
-      page_title: "%{budget} - Participation stats"
-      total_investments: "Total investment projects"
-      total_selected_investments: "Projects in final voting phase"
-      total_unfeasible_investments: "Unfeasible projects"
-      by_phase: "Participants by phase"
-      by_heading: "Participants by phase and heading"
-      total: "Total"
-      heading: "Heading"
-      investments_sent: "Investment proposals sent"
-      participants_support_phase: "Participants support phase"
-      participants_vote_phase: "Participants voting phase"
-      participants_every_phase: "Total participants"
-      percent_total_participants: "% Total participants"
-      percent_heading_census: "% Heading census"
-      participatory_disclaimer: "** The numbers of total participants refer to persons that created, supported or voted investment proposals."
-      heading_disclaimer: "*** Data about headings refer to the heading where each user voted, not necessarily the one that person is registered on."
     polls:
-      by_channel: "Participants by channel"
-      vote_by_channel: "Vote type by channel"
-      web_percentage: "%{percentage} Web"
       booth_percentage: "%{percentage} Booths"
+      by_channel: Participants by channel
       letter_percentage: "%{percentage} Mail"
+      vote_by_channel: Vote type by channel
+      web_percentage: "%{percentage} Web"
+    title: Participation data
+    total: Total
+    total_participants: Participants
+    women_percentage: "%{percentage} Women"

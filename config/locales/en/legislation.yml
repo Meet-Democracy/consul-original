@@ -1,53 +1,49 @@
+---
 en:
   legislation:
     annotations:
       comments:
-        see_all: See all
-        see_complete: See complete
+        cancel: Cancel
+        publish_comment: Publish Comment
         replies_count:
           one: "%{count} reply"
           other: "%{count} replies"
-        cancel: Cancel
-        publish_comment: Publish Comment
+        see_all: See all
+        see_complete: See complete
       form:
         phase_not_open: This phase is not open
       index:
-        title: Comments
         comments_about: Comments about
         see_in_context: See in context
+        title: Comments
       show:
         title: Comment
       version_chooser:
-        seeing_version: Commments for version
         see_text: See text draft
+        seeing_version: Commments for version
     draft_versions:
       changes:
-        title: Changes
-        seeing_changelog_version: Revision changes summary
         see_text: See text draft
+        seeing_changelog_version: Revision changes summary
+        title: Changes
       show:
         loading_comments: Loading comments
+        see_changes: see changes summary
+        see_comments: See all comments
         seeing_version: You're seeing draft version
         select_draft_version: Select draft
         select_version_submit: see
-        updated_at: updated at %{date}
-        see_changes: see changes summary
-        see_comments: See all comments
-        text_toc: Table of contents
         text_body: Text
         text_comments: Comments
+        text_toc: Table of contents
+        updated_at: updated at %{date}
     processes:
+      debate:
+        empty_questions: There aren't any questions
       header:
         additional_info: Additional information
         description: Description
         more_info: More information and context
-      proposals:
-        empty_proposals: There are no proposals
-        filters:
-          random: Random
-          winners: Selected
-      debate:
-        empty_questions: There aren't any questions
       index:
         filter: Filter
         filters:
@@ -55,80 +51,85 @@ en:
           past: Past
         no_open_processes: There aren't open processes
         no_past_processes: There aren't past processes
+        section_footer:
+          description: Participate in the debates and processes prior to the approval of new regulations or strategies. Your opinion will be considered.
+          title: Help with collaborative legislation
         section_header:
+          help: Help with collaborative legislation
           icon_alt: Collaborative legislation icon
           title: Collaborative legislation
-          help: Help with collaborative legislation
-        section_footer:
-          title: Help with collaborative legislation
-          description: Participate in the debates and processes prior to the approval of new regulations or strategies. Your opinion will be considered.
-      phase_not_open:
-        not_open: This phase is not open yet
       phase_empty:
         empty: Nothing published yet
+      phase_not_open:
+        not_open: This phase is not open yet
       process:
         see_latest_comments: See latest comments
         see_latest_comments_title: Comment on this process
+      proposals:
+        empty_proposals: There are no proposals
+        filters:
+          random: Random
+          winners: Selected
       shared:
-        key_dates: Participation phases
-        homepage: Homepage
+        allegations_dates: Comments
         debate_dates: Debate
         draft_publication_date: Draft publication
-        allegations_dates: Comments
-        result_publication_date: Final result publication
+        homepage: Homepage
+        key_dates: Participation phases
         milestones_date: Following
         proposals_dates: Proposals
+        result_publication_date: Final result publication
+    proposals:
+      form:
+        tags_label: Categories
+      not_verified: For vote proposals %{verify_account}.
+      process_title: Collaborative legislation process
     questions:
       comments:
         comment_button: Publish answer
-        comments_title: Open answers
         comments_closed: Closed phase
+        comments_title: Open answers
         form:
           leave_comment: Leave your answer
+      participation:
+        debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
+        organizations: Organisations are not permitted to participate in the debate
+        phase_not_open: This phase is not open
+        unauthenticated: You must %{signin} or %{signup} to participate.
+        verified_only: Only verified users can participate, %{verify_account}.
       question:
         debate: Debate
       show:
         answer_question: Submit answer
-        next_question: Next question
         first_question: First question
+        next_question: Next question
         share: Share
         title: Collaborative legislation process
-      participation:
-        phase_not_open: This phase is not open
-        organizations: Organisations are not permitted to participate in the debate
-        unauthenticated: You must %{signin} or %{signup} to participate.
-        verified_only: Only verified users can participate, %{verify_account}.
-        debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
     shared:
       share: Share
       share_comment: Comment on %{version_name} from process draft %{process_name}
-    proposals:
-      form:
-        tags_label: "Categories"
-      not_verified: "For vote proposals %{verify_account}."
-      process_title: Collaborative legislation process
     summary:
-      title: "Summary"
-      votes:
-        zero: "%{count} votes"
-        one: "%{count} vote"
-        other: "%{count} votes"
-      debate_phase: "Debate phase"
-      proposals_phase: "Proposals phase"
-      allegations_phase: "Comments phase"
+      allegations_phase: Comments phase
+      debate_phase: Debate phase
       debates:
-        zero: "No debates"
         one: "%{count} debate"
         other: "%{count} debates"
+        zero: No debates
+      download: Download summary
+      most_voted_comments: Most voted comments
+      no_allegation: There are no comments
+      process_empty: This process didn't have any participation phases
       proposals:
-        zero: "No proposals"
         one: "%{count} proposal"
         other: "%{count} proposals"
-      download: "Download summary"
+        zero: No proposals
+      proposals_phase: Proposals phase
+      title: Summary
       top_comments:
-        zero: "No comments"
         one: "%{count} comment"
-        other: "Top comments"
-      most_voted_comments: "Most voted comments"
-      no_allegation: "There are no comments"
-      process_empty: "This process didn't have any participation phases"
+        other: Top comments
+        zero: No comments
+      votes:
+        one: "%{count} vote"
+        other: "%{count} votes"
+        zero: "%{count} votes"

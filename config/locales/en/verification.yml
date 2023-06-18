@@ -1,3 +1,4 @@
+---
 en:
   verification:
     alert:
@@ -8,7 +9,7 @@ en:
         alert:
           failure: There was a problem with sending an email to your account
         flash:
-          success: "We have sent a confirmation email to your account: %{email}"
+          success: 'We have sent a confirmation email to your account: %{email}'
       show:
         alert:
           failure: Verification code incorrect
@@ -26,7 +27,7 @@ en:
       errors:
         incorrect_code: Verification code incorrect
       new:
-        explanation: "In order to vote for budget projects you can:"
+        explanation: 'In order to vote for budget projects you can:'
         go_to_index: See proposals
         office: Verify in any Citizen Support Offices
         send_letter: Send me a letter with the code
@@ -48,8 +49,8 @@ en:
         accept_terms_text: I accept %{terms_url} of the Census
         accept_terms_text_title: I accept the terms and conditions of access of the Census
         document_number: Document number
-        document_number_help_title: Help
         document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
+        document_number_help_title: Help
         document_type:
           passport: Passport
           residence_card: Residence card
