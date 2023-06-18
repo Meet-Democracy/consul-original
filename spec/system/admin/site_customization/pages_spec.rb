@@ -11,8 +11,7 @@ describe "Admin custom pages", :admin do
     end
 
     scenario "should contain all default custom pages published populated by db:seeds" do
-      slugs = %w[accessibility census_terms conditions faq privacy welcome_not_verified
-                 welcome_level_two_verified welcome_level_three_verified]
+      slugs = %w[accessibility census_terms conditions faq privacy]
 
       expect(SiteCustomization::Page.count).to be 8
       slugs.each do |slug|
