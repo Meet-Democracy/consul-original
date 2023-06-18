@@ -16,7 +16,15 @@ describe "Welcome screen" do
     user = create(:user)
     login_through_form_as(user)
 
-    expect(page).to have_current_path(page_path("welcome_not_verified"))
+    expect(page).to have_current_path(welcome_account_path)
+
+    expect(page).to have_css "li.permission-allowed", text: "Participate in debates"
+    expect(page).to have_css "li.permission-allowed", text: "Create new proposals"
+    expect(page).to have_css "li.permission-denied", text: "Support proposals"
+    expect(page).to have_css "li.permission-denied", text: "Vote for budget projects"
+    expect(page).to have_content "To perform all the actions verify your account."
+    expect(page).to have_link "Verify my account"
+    expect(page).to have_link, "Not now, go to index page"
   end
 
   scenario "for a level two verified user" do
@@ -24,7 +32,15 @@ describe "Welcome screen" do
     login_as(user)
 
     visit welcome_path
-    expect(page).to have_current_path(page_path("welcome_level_two_verified"))
+    expect(page).to have_current_path(welcome_account_path)
+
+    expect(page).to have_css "li.permission-allowed", text: "Participate in debates"
+    expect(page).to have_css "li.permission-allowed", text: "Support proposals"
+    expect(page).to have_css "li.permission-allowed", text: "Support proposals"
+    expect(page).to have_css "li.permission-denied", text: "Vote for budget projects"
+    expect(page).to have_content "To perform all the actions verify your account."
+    expect(page).to have_link "Complete verification"
+    expect(page).to have_link, "Not now, go to index page"
   end
 
   scenario "for a level three verified user" do
@@ -32,7 +48,15 @@ describe "Welcome screen" do
     login_as(user)
 
     visit welcome_path
-    expect(page).to have_current_path(page_path("welcome_level_three_verified"))
+    expect(page).to have_current_path(welcome_account_path)
+
+    expect(page).to have_css "li.permission-allowed", text: "Participate in debates"
+    expect(page).to have_css "li.permission-allowed", text: "Support proposals"
+    expect(page).to have_css "li.permission-allowed", text: "Support proposals"
+    expect(page).to have_css "li.permission-allowed", text: "Vote for budget projects"
+    expect(page).not_to have_content "To perform all the actions verify your account."
+    expect(page).to have_content "Account verified"
+    expect(page).to have_link, "Go to index page"
   end
 
   scenario "a regular user does not see it when coing to /email" do

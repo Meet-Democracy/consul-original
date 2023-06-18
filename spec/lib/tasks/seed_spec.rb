@@ -11,10 +11,7 @@ describe "rake db:seed" do
       load Rails.root.join("db", "pages.rb")
 
       paths = { accessibility: "pages.accessibility.title", conditions: "pages.conditions.title",
-                faq: "pages.help.faq.page.title", privacy: "pages.privacy.title",
-                welcome_not_verified: "welcome.welcome.title",
-                welcome_level_two_verified: "welcome.welcome.title",
-                welcome_level_three_verified: "welcome.welcome.title" }
+                faq: "pages.help.faq.page.title", privacy: "pages.privacy.title" }
 
       I18n.available_locales.each do |locale|
         I18n.with_locale(locale) do

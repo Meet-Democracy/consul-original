@@ -1,68 +1,69 @@
+---
 en:
   valuation:
-    header:
-      title: Valuation
-    menu:
-      title: Valuation
-      budgets: Participatory budgets
+    budget_investments:
+      edit:
+        dossier: Dossier
+        feasibility: Feasibility
+        not_feasible_alert: An email will be sent immediately to the author of the project with the report of unfeasibility.
+        price: Price (%{currency})
+        price_first_year: Cost during the first year (%{currency}) <small>(optional, data not public)</small>
+        save: Save changes
+        valuation_finished_alert: Are you sure you want to mark this report as completed? If you do it, it can no longer be modified.
+      index:
+        assigned_to: Assigned to %{valuator}
+        edit: Edit dossier
+        filters:
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+          valuation_open: Open
+        headings_filter_all: All headings
+        no_investments: There are no investment projects.
+        table_actions: Actions
+        table_heading_name: Heading name
+        table_id: ID
+        table_title: Title
+        title: Investment projects
+      not_in_valuating_phase: Investments can only be valuated when Budget is in valuating phase
+      notice:
+        valuate: Dossier updated
+      show:
+        assigned_admin: Assigned admin
+        assigned_valuators: Assigned valuators
+        back: Back
+        by: Sent by
+        currency: "€"
+        dossier: Dossier
+        duration: Time scope
+        edit_dossier: Edit dossier
+        feasibility: Feasibility
+        feasible: Feasible
+        heading: Heading
+        info: Author info
+        preview: Investment preview
+        price: Price
+        price_first_year: Cost during the first year
+        responsibles: Responsibles
+        sent: Sent at
+        title: Investment project
+        undefined: Undefined
+        unfeasible: Unfeasible
+        valuation_finished: Valuation finished
+      valuation_comments: Valuation comments
     budgets:
       index:
-        title: Participatory budgets
+        evaluate: Evaluate
         filters:
           current: Open
           finished: Finished
+        no_budgets: There are no budgets
+        table_actions: Actions
+        table_assigned_investments_valuation_open: Investment projects assigned with valuation open
         table_name: Name
         table_phase: Phase
-        table_assigned_investments_valuation_open: Investment projects assigned with valuation open
-        table_actions: Actions
-        evaluate: Evaluate
-        no_budgets: "There are no budgets"
-    budget_investments:
-      index:
-        headings_filter_all: All headings
-        filters:
-          valuation_open: Open
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-        assigned_to: "Assigned to %{valuator}"
-        title: Investment projects
-        edit: Edit dossier
-        table_id: ID
-        table_title: Title
-        table_heading_name: Heading name
-        table_actions: Actions
-        no_investments: "There are no investment projects."
-      show:
-        back: Back
-        title: Investment project
-        info: Author info
-        by: Sent by
-        sent: Sent at
-        heading: Heading
-        dossier: Dossier
-        edit_dossier: Edit dossier
-        price: Price
-        price_first_year: Cost during the first year
-        currency: "€"
-        feasibility: Feasibility
-        feasible: Feasible
-        unfeasible: Unfeasible
-        undefined: Undefined
-        valuation_finished: Valuation finished
-        duration: Time scope
-        responsibles: Responsibles
-        assigned_admin: Assigned admin
-        assigned_valuators: Assigned valuators
-        preview: Investment preview
-      edit:
-        dossier: Dossier
-        price: "Price (%{currency})"
-        price_first_year: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
-        feasibility: Feasibility
-        valuation_finished_alert: "Are you sure you want to mark this report as completed? If you do it, it can no longer be modified."
-        not_feasible_alert: "An email will be sent immediately to the author of the project with the report of unfeasibility."
-        save: Save changes
-      notice:
-        valuate: "Dossier updated"
-      valuation_comments: Valuation comments
-      not_in_valuating_phase: Investments can only be valuated when Budget is in valuating phase
+        title: Participatory budgets
+    header:
+      title: Valuation
+    menu:
+      budgets: Participatory budgets
+      title: Valuation
