@@ -3,6 +3,7 @@
 <main>
   <div class="row margin-top">
     <div class="user-permissions small-12 medium-5 column">
+      <h1><%= t("welcome.welcome.title") %></h1>
       <p><%= t("welcome.welcome.user_permission_info") %></p>
 
       <%= render Account::PermissionsListComponent.new(current_user) %>
