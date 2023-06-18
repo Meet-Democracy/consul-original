@@ -1,0 +1,18 @@
+<main>
+  <div class="row margin-top">
+    <div class="user-permissions small-12 medium-5 column">
+      <h2><%= t("welcome.welcome.title") %></h2>
+      <p><%= t("account.show.user_permission_title") %></p>
+      <p><%= t("account.show.user_permission_info") %></p>
+
+      <%= render Account::PermissionsListComponent.new(current_user) %>
+      <%= render Account::VerifyAccountComponent.new(@account) %>
+
+      <% if current_user.level_three_verified? %>
+      <p><%= link_to t("welcome.welcome.start_using_consul") , root_path %></p>
+      <% else %>
+      <p><%= link_to t("welcome.welcome.go_to_index") , root_path %></p>
+      <% end %>
+    </div>
+  </div>
+</main>
