@@ -33,7 +33,7 @@ describe "Welcome screen" do
 
     visit welcome_path
     expect(page).to have_current_path(welcome_account_path)
-    
+
     expect(page).to have_css "li.permission-allowed", text: "Participate in debates"
     expect(page).to have_css "li.permission-allowed", text: "Support proposals"
     expect(page).to have_css "li.permission-allowed", text: "Support proposals"
