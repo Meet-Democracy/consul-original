@@ -54,16 +54,16 @@ end
 FactoryBot.use_parent_strategy = false
 
 Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Options.chrome(
-    "goog:chromeOptions" => {
-      args: %W[headless no-sandbox window-size=1200,800 proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}]
-    }
-  )
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--headless')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--window-size=1200,800')
+  options.add_argument("--proxy-server=#{Capybara.app_host}:#{Capybara::Webmock.port_number}")
 
   Capybara::Selenium::Driver.new(
     app,
     browser: :chrome,
-    desired_capabilities: capabilities
+    options: options
   )
 end
 
