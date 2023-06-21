@@ -397,4 +397,24 @@ describe "Legislation Draft Versions" do
       expect(page).to have_content "my other annotation"
     end
   end
+
+  context "See table from markdown" do
+    let(:draft_version) { create(:legislation_draft_version, :published, :with_table) }
+
+    scenario "See table on default screen" do
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+      
+      expect(page).to have_css("table")
+      expect(page).to have_content "Roberta"
+      expect(page).to have_content "25"
+    end
+
+    scenario "See table on small screen" , :small_window do
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+
+      expect(page).to have_css("table")
+      expect(page).to have_content "Roberta"
+      expect(page).to have_content "25"
+    end
+  end
 end
