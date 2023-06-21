@@ -499,6 +499,34 @@
           }
         }
       }
+      
+      table {
+        @extend .scroll;
+        border: $table-border;
+        border-collapse: collapse;
+        color: $body-font-color;
+        background-color: $table-background;
+
+        th {
+          background: $table-head-background;
+          color: $table-head-font-color
+        }
+
+        tr {
+
+          td {
+            line-height: $line-height;
+          }
+
+          &:nth-child(odd) {
+            background: $table-background;
+          }
+
+          &:nth-child(even) {
+            background: $table-striped-background;
+          }
+        }
+      }
     }
 
     .calc-comments {
