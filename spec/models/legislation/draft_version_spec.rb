@@ -81,7 +81,7 @@ describe Legislation::DraftVersion do
       | id | name    | age | gender |
       |----|---------|-----|--------|
       | 1  | Roberta | 39  | M      |
-      | 2  | Oliver  | 25  | F      |      
+      | 2  | Oliver  | 25  | F      |
     BODY_MARKDOWN
   end
 
