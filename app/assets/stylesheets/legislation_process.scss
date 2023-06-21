@@ -991,9 +991,11 @@
 // 10. Legislation draft table
 // -------------------------
 
-.draft.text {
+.draft-text {
   table {
-    @extend .scroll;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
     border: $table-border;
     border-collapse: collapse;
     color: $body-font-color;
@@ -1001,7 +1003,7 @@
 
     th {
       background: $table-head-background;
-      color: $table-head-font-color
+      color: $table-head-font-color;
     }
 
     tr {
