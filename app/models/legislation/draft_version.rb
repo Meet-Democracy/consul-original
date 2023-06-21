@@ -30,7 +30,6 @@ class Legislation::DraftVersion < ApplicationRecord
     extensions = {
       tables: true
     }
-    renderer = Redcarpet::Render::HTML.new(render_options)
 
     Redcarpet::Markdown.new(renderer, extensions).render(body)
   end
