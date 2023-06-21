@@ -400,8 +400,11 @@ describe "Legislation Draft Versions" do
 
   context "See table from markdown" do
     let(:draft_version) { create(:legislation_draft_version, :published, :with_table) }
+    let(:path) do
+      edit_admin_legislation_process_draft_version_path(draft_version.process, draft_version)
+    end
 
-    scenario "See table on default screen" do
+    scenario "See table as a user" do
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
 
       expect(page).to have_css("table")
@@ -409,8 +412,11 @@ describe "Legislation Draft Versions" do
       expect(page).to have_content "25"
     end
 
-    scenario "See table on small screen", :small_window do
-      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+    scenario "See table as an admin" do
+      login_as(administrator)
+
+      visit path
+      click_link class: "fullscreen-toggle"
 
       expect(page).to have_css("table")
       expect(page).to have_content "Roberta"
