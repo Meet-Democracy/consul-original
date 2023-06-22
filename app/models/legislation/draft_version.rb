@@ -22,9 +22,16 @@ class Legislation::DraftVersion < ApplicationRecord
   scope :published, -> { where(status: "published").order("id DESC") }
 
   def body_html
-    renderer = Redcarpet::Render::HTML.new(with_toc_data: true)
+    # See https://github.com/vmg/redcarpet for options
+    render_options = {
+      with_toc_data: true
+    }
+    renderer = Redcarpet::Render::HTML.new(render_options)
+    extensions = {
+      tables: true
+    }
 
-    Redcarpet::Markdown.new(renderer).render(body)
+    Redcarpet::Markdown.new(renderer, extensions).render(body)
   end
 
   def toc_html

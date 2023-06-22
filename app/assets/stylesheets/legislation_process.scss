@@ -9,6 +9,7 @@
 // 07. Legislation comments
 // 08. Legislation draft comment
 // 09. Legislation proposals
+// 10. Legislation draft tables
 //
 
 // 01. Hero
@@ -984,5 +985,40 @@
     margin-left: 50%;
     margin-top: $line-height;
     transform: translateX(-50%);
+  }
+}
+
+// 10. Legislation draft table
+// -------------------------
+
+.draft-text {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border: $table-border;
+    border-collapse: collapse;
+    color: $body-font-color;
+    background-color: $table-background;
+
+    th {
+      background: $table-head-background;
+      color: $table-head-font-color;
+    }
+
+    tr {
+
+      td {
+        line-height: $line-height;
+      }
+
+      &:nth-child(odd) {
+        background: $table-background;
+      }
+
+      &:nth-child(even) {
+        background: $table-striped-background;
+      }
+    }
   }
 }
