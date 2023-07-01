@@ -38,37 +38,41 @@ describe Budgets::BudgetComponent do
   end
 
   describe "budget image" do
-    it "show background image when bugdet image defined" do
+    it "does not show a background image when the budget has no image" do
       render_inline Budgets::BudgetComponent.new(budget)
 
       expect(page).to have_css ".budget-header"
       expect(page).not_to have_css ".with-background-image"
-      expect(page).not_to have_css ".budget-header[style*='background-image:'][style*='clippy.jpg']"
+      expect(page).not_to have_css ".budget-header[style*='background-image:']"
+    end
 
+    it "shows a background image when the bugdet image is defined" do
       budget = create(:budget, :with_image)
 
       render_inline Budgets::BudgetComponent.new(budget)
 
-      expect(page).to have_css ".budget-header"
-      expect(page).to have_css ".with-background-image"
+      expect(page).to have_css ".budget-header.with-background-image"
       expect(page).to have_css ".budget-header[style*='background-image:'][style*='clippy.jpg']"
     end
 
-    it "show background image when bugdet image with brackets defined" do
+    it "quotes the background image filename so it works with filenames with brackets" do
+      budget.update!(image: create(:image, attachment: fixture_file_upload("clippy(with_brackets).jpg")))
+
       render_inline Budgets::BudgetComponent.new(budget)
 
-      expect(page).to have_css ".budget-header"
-      expect(page).not_to have_css ".with-background-image"
-      expect(page).not_to have_css ".budget-header[style*='background-image:']"\
-                                   "[style*='url(\\''][style*='clippy(1).jpg']"
-
-      budget.update!(image: create(:image, attachment: fixture_file_upload("clippy(1).jpg")))
-      render_inline Budgets::BudgetComponent.new(budget)
-
-      expect(page).to have_css ".budget-header"
-      expect(page).to have_css ".with-background-image"
+      expect(page).to have_css ".budget-header.with-background-image"
       expect(page).to have_css ".budget-header[style*='background-image:']"\
-                               "[style*='url(\\''][style*='clippy(1).jpg']"
+                               "[style*='url(\\''][style*='clippy(with_brackets).jpg\\'']"
+    end
+
+    it "escapes single quotes in the background image filename" do
+      budget.update!(image: create(:image, attachment: fixture_file_upload("clippy_with_'quotes'.jpg")))
+
+      render_inline Budgets::BudgetComponent.new(budget)
+
+      expect(page).to have_css ".budget-header.with-background-image"
+      expect(page).to have_css ".budget-header[style*='background-image:']"\
+                               "[style*='url(\\''][style*='clippy_with_\\\\\'quotes\\\\\'.jpg']"
     end
   end
 end
