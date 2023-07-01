@@ -416,7 +416,7 @@ describe "Legislation Draft Versions" do
       login_as(administrator)
 
       visit path
-      click_link class: "fullscreen-toggle"
+      click_link "Launch text editor"
 
       expect(page).to have_css("table")
       expect(page).to have_content "Roberta"
