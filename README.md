@@ -1,85 +1,91 @@
+<!--
+  Title: CONSUL DEMOCRACY
+  Description: Citizen Participation and Open Government Application
+  Keywords: democracy, citizen participation, eparticipation, debates, proposals, voting, consultations, crowdlaw, participatory budgeting
+-->
 
-# Meet Democracy fork of Consul project
+![CONSUL DEMOCRACY logo](https://raw.githubusercontent.com/consuldemocracy/consuldemocracy/master/public/consul_logo.png)
 
-**NOTE** This is a **fork** of [Consul Project](https://github.com/consul/consul/).
+# CONSUL DEMOCRACY
 
-Our sincere thanks and appreciation go out to Consul Project for the incredible work and support they provide.
+Citizen Participation and Open Government Application
 
-![Meet Democracy logo](https://meetdemocracy.com/images/LogoMeetDemocracy.png)
+![Build status](https://github.com/consuldemocracy/consuldemocracy/workflows/tests/badge.svg)
+[![Code Climate](https://codeclimate.com/github/consuldemocracy/consuldemocracy/badges/gpa.svg)](https://codeclimate.com/github/consuldemocracy/consuldemocracy)
+[![Coverage Status](https://coveralls.io/repos/github/consuldemocracy/consuldemocracy/badge.svg)](https://coveralls.io/github/consuldemocracy/consuldemocracy?branch=master)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/consul/localized.svg)](https://translate.consuldemocracy.org/)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
+[![Accessibility conformance](https://img.shields.io/badge/accessibility-WAI:AA-green.svg)](https://www.w3.org/WAI/eval/Overview)
+[![A11y issues checked with Rocket Validator](https://rocketvalidator.com/badges/checked_with_rocket_validator.svg?url=https://rocketvalidator.com)](https://rocketvalidator.com/opensource)
 
-# Hi, we are Meet Democracy! 👋
-[https://meetdemocracy.com](https://meetdemocracy.com)
+[![Join the chat at https://gitter.im/consul/consul](https://badges.gitter.im/consul/consul.svg)](https://gitter.im/consul/consul?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Help wanted](https://img.shields.io/badge/help-wanted-brightgreen.svg?style=flat-square)](https://github.com/consuldemocracy/consuldemocracy/issues?q=is%3Aopen+label%3A"help+wanted")
 
-Meet democracy platform allows the participants of your community to debate and vote on legislation, budget and more. Our goal is to make community development easy. We intend to democratize community participation by making it accessible to all. We recognize the importance of having access to a democratic and trustworthy platform. Give your community citizens the freedom to express themselves.
+[![Knapsack Pro Parallel CI builds for RSpec tests](https://img.shields.io/badge/Knapsack%20Pro-Parallel%20/%20RSpec%20tests-%230074ff)](https://knapsackpro.com/dashboard/organizations/176/projects/202/test_suites/318/builds?utm_campaign=organization-id-176&utm_content=test-suite-id-318&utm_medium=readme&utm_source=knapsack-pro-badge&utm_term=project-id-202)
 
-## What's new ?
+This is the opensource code repository of the eParticipation website CONSUL DEMOCRACY, originally developed for the Madrid City government eParticipation website
 
-- Upgrade Font Awesome from 5.15.1 to 6.4.0 [PR #6](https://github.com/Meet-Democracy/consul-original/pull/6)
+## Documentation
 
-- Render budget image with brackets in its name [PR #3](https://github.com/Meet-Democracy/consul-original/pull/3)
+Check the ongoing documentation at [https://docs.consuldemocracy.org](https://docs.consuldemocracy.org) to learn more about how to start your own CONSUL DEMOCRACY fork, install it, customize it and learn to use it from an administrator/maintainer perspective.
 
-- Fix Parser / Rubocop console error [PR #2](https://github.com/Meet-Democracy/consul-original/pull/2)
+## CONSUL DEMOCRACY Project main website
 
-- Fix Failing Test: SDG management relations_spec [PR #1](https://github.com/Meet-Democracy/consul-original/pull/1)
+You can access the main website of the project at [http://consuldemocracy.org](http://consuldemocracy.org) where you can find documentation about the use of the platform, videos, and links to the community space.
 
-## Run Locally
+## Configuration for development and test environments
 
-Clone the project
+**NOTE**: For more detailed instructions check the [docs](https://docs.consuldemocracy.org)
+
+Prerequisites: install git, Ruby 3.0.6, CMake, pkg-config, shared-mime-info, Node.js and PostgreSQL (>=9.5).
 
 ```bash
-git clone https://github.com/Meet-Democracy/consul-original.git
-```
-
-Go to the project directory
-
-```bash
-cd consul-original
-```
-
-Install dependencies
-
-```bash
+git clone https://github.com/consuldemocracy/consuldemocracy.git
+cd consuldemocracy
 bundle install
-
-```
-Configure the database and secrets
-
-```bash
 cp config/database.yml.example config/database.yml
 cp config/secrets.yml.example config/secrets.yml
-```
-
-Setup the database
-
-```bash
 bin/rake db:create
 bin/rake db:migrate
 bin/rake db:dev_seed
+RAILS_ENV=test rake db:setup
 ```
 
-Run the tests
+Run the app locally:
 
 ```bash
-bin/rake db:test:prepare
+bin/rails s
+```
+
+Run the tests with:
+
+```bash
 bin/rspec
 ```
 
-
-Start the server
-
-```bash
-bin/rake s
-```
-
-## Demonstration Admin and User credentials
-
 You can use the default admin user from the seeds file:
 
- **user:** admin
+ **user:** admin@consul.dev
  **pass:** 12345678
 
 But for some actions like voting, you will need a verified user, the seeds file also includes one:
 
- **user:** verified
+ **user:** verified@consul.dev
  **pass:** 12345678
+
+## Configuration for production environments
+
+See [installer](https://github.com/consuldemocracy/installer)
+
+## Current state
+
+Development started on [2015 July 15th](https://github.com/consuldemocracy/consuldemocracy/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features at the [project's website](http://consuldemocracy.org/) and future features at the [Roadmap](https://github.com/orgs/consuldemocracy/projects/1) and [open issues list](https://github.com/consuldemocracy/consuldemocracy/issues).
+
+## License
+
+Code published under AFFERO GPL v3 (see [LICENSE-AGPLv3.txt](LICENSE-AGPLv3.txt))
+
+## Contributions
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
